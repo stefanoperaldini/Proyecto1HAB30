@@ -1,4 +1,66 @@
+/* Estilos generales */
 body {
-    background-color: aquamarine;
-    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Resultados de búsqueda (personaliza según tus necesidades) */
+#search-results {
+    margin-top: 20px;
+}
+
+/* Estilos para la sección de resultados de búsqueda */
+/* #search-results .flight-result {
+    Agrega estilos para cada resultado individual de vuelo
+} */
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
