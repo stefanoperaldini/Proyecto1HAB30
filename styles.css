@@ -74,7 +74,7 @@ body {
 
 
 header {
-    background-color: #cab6f6;
+    background-image:linear-gradient(to right,#c5adf8,rgb(244, 198, 119),rgb(244, 198, 119)); 
     color: #fff;
     text-align: center;
     padding: 10px;
