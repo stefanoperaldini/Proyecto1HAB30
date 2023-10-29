@@ -6,6 +6,7 @@
     --skyblue: #49C2F2;
     --maroon: #8C443E;
     --whitegrey: #F2F2F2;
+   
 }
 
 /* Estilos del header */
@@ -36,6 +37,7 @@ h1 {
     display: flex;
     align-items: center;
     margin-right: 10px;
+   
 }
 
 a {
@@ -51,13 +53,14 @@ nav a{
 }
 
 nav a:hover{
-    color: red;
+    background: linear-gradient(80deg, darkgreen, yellowgreen);
+    transition: 0.6s;
     
 }
 
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(rgba(55, 55, 226, 0.5), transparent), url('https://www.flybio.eus/wp-content/uploads/2020/03/Aeropuerto_5.jpg');
@@ -66,12 +69,12 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-size: 100% 100%;
+    text-shadow: 3px 3px 5px black;
 }
 
-<<<<<<< HEAD
 
 header {
-    background-color: #333;
+    background-color: #cab6f6;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -88,13 +91,11 @@ h1 {
 
 }
 
-div{
-    
-}
 
 
-=======
->>>>>>> d208916504235b8e15929aa6209b4bdc6e3edd79
+
+
+
 main {
     max-width: 800px;
     margin: 20px auto;
@@ -122,7 +123,8 @@ h2 {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 15px;
-}
+   
+}  
 
 .passengers{
     border-radius: 30px;
