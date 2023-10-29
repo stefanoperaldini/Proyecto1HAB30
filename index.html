@@ -10,24 +10,26 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="/Icono/apple-touch-icon.png" alt="Hack a Flight">
+        <div>
+            <img src="Icono/apple-touch-icon.png" alt="Hack a Flight" class="logo">
+            <h1 class="hackaflight">Hack A Flight</h1>
         </div>
-        <h1>Buscador de Vuelos</h1>
-        
-        <p>Compartir</p>
-        
+        <nav>
+            <a href="#" class="nav-link">Inicio</a>
+            <a href="#" class="nav-link">Compartir</a>
+            
+        </nav>
     </header>
 
     <main>
         <section>
             <h2>Buscar Vuelos</h2>
             <form id="flight-search-form">
-                <label for="origin">Origen:</label>
-                <input type="text" id="origin" name="origin" required>
+                <label for="origin">Origen</label>
+                <input type="text" id="origin" name="origin" class="busqueda" required>
 
-                <label for="destination">Destino:</label>
-                <input type="text" id="destination" name="destination" required>
+                <label for="destination">Destino</label>
+                <input type="text" id="destination" class="busqueda" name="destination" required>
 
                 <label for="departure-date">Fecha de Salida:</label>
                 <input type="date" id="departure-date" name="departure-date" required>
@@ -35,10 +37,10 @@
                 <label for="return-date">Fecha de Regreso (opcional):</label>
                 <input type="date" id="return-date" name="return-date"> 
 
-                <label for="passengers">Número de Pasajeros:</label>
-                <input type="number" id="passengers" name="passengers" min="1" value="1" required>
+                <!-- <label for="passengers">Número de Pasajeros:</label>
+                <input type="number" id="passengers" class="passengers" name="passengers" min="1" value="1"> -->
 
-                <input type="submit" value="Buscar Vuelos">
+                <input type="submit" class="button_buscar" value="Buscar Vuelos">
             </form>
         </section>
 
@@ -49,11 +51,12 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 Grupo 4 HACK A BOSS</p>
+        <p class="footer_text">&copy; 2023 Grupo 4 HACK A BOSS</p>
     </footer>
     <script src="/JS/main.js"></script>
 </body>
 </html>
+
 <!--
 Buscador del vuelo más barato para el día siguiente.
 

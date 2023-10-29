@@ -1,3 +1,3 @@
-"use strick";
+"use strict";
 console.log("hola")
 
