@@ -28,7 +28,24 @@ async function getAmadeusToken(clientId, clientSecret) {
   }
 }
 
+const searchForm = document.getElementById('flight-search-form');
+searchForm.addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+
+    // Obtén los valores de entrada del formulario
+    const origin = document.getElementById('origin').value;
+    const destination = document.getElementById('destination').value;
+    
+    console.log(origin)
+    console.log(destination)
+
+   
+
+
 async function searchFlights(token, origin, destination, departureDate) {
+    
+
+
  //const url = `https://api.amadeus.com/v2/shopping/flight-offers?origin=${origin}&destination=${destination}&departureDate=${departureDate}`;
  const url = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${origin}&destinationLocationCode=${destination}&departureDate=${departureDate}&adults=${passengers}&nonStop=false&max=250`
 
@@ -67,9 +84,12 @@ async function main() {
 
 main ();
 
-const origin = document.getElementById('origin').value;
-const destination = document.getElementById('destination').value;
-console.log(destination)
+
+
+// Obtén el formulario de búsqueda y agrega un controlador de eventos para la búsqueda
+
+
+
 "use strict"
 
 // Variable para pasajero y obtención de fecha de mañana para el buscador de billetes
@@ -89,7 +109,7 @@ function tomorrow() {
 const departureDate = tomorrow();
 
 console.log(departureDate);
-
+});
 /*
 // Obtén el formulario de búsqueda y agrega un controlador de eventos para la búsqueda
 const searchForm = document.getElementById('flight-search-form');
