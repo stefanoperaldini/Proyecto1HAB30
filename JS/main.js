@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "use strict";
 
 async function getAmadeusToken(clientId, clientSecret) {
@@ -70,32 +69,6 @@ main();
 
 /*
 // Obtén el formulario de búsqueda y agrega un controlador de eventos para la búsqueda
-=======
-"use strict"
-
-// Variable para pasajero y obtención de fecha de mañana para el buscador de billetes
-const passengers = 1
-
-function tomorrow() {
-
-    const actualDate = new Date();
-    const day = actualDate.getDate()+1;
-    const month = actualDate.getMonth()+1;
-    const year = actualDate.getFullYear();
-
-    const departureDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
-    return departureDate;
-};
-
-const departureDate = tomorrow();
-
-console.log(departureDate);
-
-
-
-
-
->>>>>>> 8595188fe1ffa571f7c140ec60bb4079a8bf1b2e
 const searchForm = document.getElementById('flight-search-form');
 searchForm.addEventListener('submit', function (e) {
     e.preventDefault();
