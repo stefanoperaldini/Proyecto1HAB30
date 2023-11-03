@@ -7,6 +7,14 @@
     --maroon: #8C443E;
     --whitegrey: #F2F2F2;
 }
+@font-face {
+    font-family: 'aeropuerto';
+    src: url('./letras/Skyfont-NonCommercial.otf') format('opentype');
+    /* Otras propiedades de la fuente, como font-weight y font-style, pueden especificarse aquí */
+    font-weight: bold;
+}
+
+
 
 /* Estilos del header */
 
@@ -18,7 +26,7 @@ header{
     min-height: 40px;
     background-color: var(--navylogo);
     color: #fff;
-    padding: 10px;  
+    padding: 10px; 
 }
 
 header div{
@@ -27,6 +35,7 @@ header div{
 }
 
 h1 {
+    font-family: 'aeropuerto',sans-serif;
     margin-left: 100px;
     margin-right: 50px;
 }
@@ -57,10 +66,10 @@ nav a:hover{
 
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'exo 2', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(rgba(55, 55, 226, 0.5), transparent), url('https://www.flybio.eus/wp-content/uploads/2020/03/Aeropuerto_5.jpg');
+    background: url(/Icono/pistadespegue.jpg);
     background-position: left top;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -69,18 +78,6 @@ body {
 }
 
 
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-    
-
-}
 
 h1 {
     margin: 0;
@@ -104,59 +101,62 @@ main {
     background-color:RGBA(240,248,255,0.6); 
 }
     
-    
-label {
-    display: block;
-    margin-top: 10px;
-}
 
 h2 {
     display: flex;
     justify-content: center;
 }
 
-.busqueda {
-    width: 97%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
+.form-title {
+    font-size: 50px;
 }
 
-.passengers{
-    border-radius: 30px;
-    width: 5%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 15px;
     font-weight: bold;
 }
 
-.button_buscar{
-    width: 90%;
-    font-weight: bolder;
-    font-size: 23px;
-    background: var(--navylogo);
-    color: #fff;
+.busqueda {
+    width: 97%;
+    padding: 10px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: rgba(236, 234, 234, 0.709);
+    border-color: #3299D9;
+}
+
+button{
+    border: 0;
+    margin-top: 15px;
+    background: linear-gradient(150deg, blue, aqua, navy);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    font-size: 18px;
+    padding: 4px;
     cursor: pointer;
-    height: 45px;
-    border-radius: 20px;
-    margin-left: 40px;
-    margin-top: 30px;
-    letter-spacing: 2px;
+    transition: .3s;
 }
 
-form .button_buscar:hover{
-    width: 90%;
-    font-weight: bolder;
-    font-size: 23px;
-    transform-origin: 0 50%;
-    background: linear-gradient(80deg, darkgreen, yellowgreen);
-    transition: 0.6s;
+button span {
+    background-color: rgb(14, 13, 13);
+    padding: 16px 24px;
+    border-radius: 6px;
+    transition: .3s;
+
 }
 
-.button_buscar:hover::before{
-    transform: scaleX(1);
+button:hover span {
+    background: none;
+}
+
+button:active {
+    transform: scale(0.9);
 }
 
 
