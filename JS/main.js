@@ -30,7 +30,7 @@ async function getAmadeusToken(clientId, clientSecret) {
 
 async function searchFlights(token, origin, destination, departureDate) {
  //const url = `https://api.amadeus.com/v2/shopping/flight-offers?origin=${origin}&destination=${destination}&departureDate=${departureDate}`;
- const url = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${origin}&destinationLocationCode=${destination}&departureDate=${departureDate}&adults=1&nonStop=false&max=250`
+ const url = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${origin}&destinationLocationCode=${destination}&departureDate=${departureDate}&adults=${passengers}&nonStop=false&max=250`
 
   try {
     const response = await fetch(url, {
@@ -62,10 +62,33 @@ async function main() {
   let token = await getAmadeusToken(clientId, clientSecret);
   if(token !== null)
   console.log(token)
-   await searchFlights(token, "JFK", "LAX", "2023-11-04");
+   await searchFlights(token, origin, destination, departureDate);
 }
 
-main();
+main ();
+
+const origin = document.getElementById('origin').value;
+const destination = document.getElementById('destination').value;
+console.log(destination)
+"use strict"
+
+// Variable para pasajero y obtención de fecha de mañana para el buscador de billetes
+const passengers = 1
+
+function tomorrow() {
+
+    const actualDate = new Date();
+    const day = actualDate.getDate()+1;
+    const month = actualDate.getMonth()+1;
+    const year = actualDate.getFullYear();
+
+    const departureDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
+    return departureDate;
+};
+
+const departureDate = tomorrow();
+
+console.log(departureDate);
 
 /*
 // Obtén el formulario de búsqueda y agrega un controlador de eventos para la búsqueda
