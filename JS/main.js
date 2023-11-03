@@ -1,19 +1,39 @@
+"use strict"
 
-// Obtén el formulario de búsqueda y agrega un controlador de eventos para la búsqueda
+// Variable para pasajero y obtención de fecha de mañana para el buscador de billetes
+const passengers = 1
+
+function tomorrow() {
+
+    const actualDate = new Date();
+    const day = actualDate.getDate()+1;
+    const month = actualDate.getMonth()+1;
+    const year = actualDate.getFullYear();
+
+    const departureDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
+    return departureDate;
+};
+
+const departureDate = tomorrow();
+
+console.log(departureDate);
+
+
+
+
+
 const searchForm = document.getElementById('flight-search-form');
 searchForm.addEventListener('submit', function (e) {
-    e.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+    e.preventDefault();
 
     // Obtén los valores de entrada del formulario
     const origin = document.getElementById('origin').value;
     const destination = document.getElementById('destination').value;
-    const departureDate = document.getElementById('departure-date').value;
-    const returnDate = document.getElementById('return-date').value;
-    const passengers = document.getElementById('passengers').value;
 
-    // Aquí puedes realizar una solicitud a tu servidor o una API de búsqueda de vuelos
-    // y mostrar los resultados en la sección de resultados de búsqueda.
-    // Puedes usar AJAX, Fetch API u otras tecnologías para esto.
+    
+    const departureDate = document.getElementById('departure-date').value;
+    
+
     // Por ejemplo:
     fetch(`/search-flights?origin=${origin}&destination=${destination}&departureDate=${departureDate}&returnDate=${returnDate}&passengers=${passengers}`)
         .then(response => response.json())
