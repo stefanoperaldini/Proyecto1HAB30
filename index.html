@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Hack a Flight</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Aquí puedes incluir enlaces a tus archivos CSS y JavaScript -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="Icono/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap" rel="stylesheet">
- 
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="Icono/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <div>
-            <img src="Icono/apple-touch-icon.png" alt="Hack a Flight" class="logo">
-            <h1 class="hackaflight">Hack A Flight</h1>
-        </div>
-        <nav>
-            <a href="#" class="nav-link">Inicio</a>
-            <a href="#" class="nav-link">Compartir</a>
-            
-        </nav>
+      <div>
+        <img
+          src="Icono/apple-touch-icon.png"
+          alt="Hack a Flight"
+          class="logo"
+        />
+        <h1 class="hackaflight">Hack A Flight</h1>
+      </div>
+      <nav>
+        <a href="#" class="nav-link">Inicio</a>
+        <a href="#" class="nav-link">Compartir</a>
+      </nav>
     </header>
 
     <main>
-        <section>
-            <h2 class="form-title">Buscar Vuelos</h2>
-            <form id="flight-search-form">
-                <label for="origin">Origen</label>
-                <input type="text" id="origin" name="origin" class="busqueda" placeholder="Ej.: JFK" required>
+      <section>
+        <h2 class="form-title">Buscar Vuelos</h2>
+        <form id="flight-search-form">
+          <label for="origin">Origen</label>
+          <input
+            type="text"
+            id="origin"
+            name="origin"
+            class="busqueda"
+            placeholder="Ej.: JFK"
+            required
+          />
 
-                <label for="destination">Destino</label>
-                <input type="text" id="destination" class="busqueda" name="destination" placeholder="Ej.: LAX" required>
+          <label for="destination">Destino</label>
+          <input
+            type="text"
+            id="destination"
+            class="busqueda"
+            name="destination"
+            placeholder="Ej.: LAX"
+            required
+          />
 
-                <!-- <label for="departure-date">Fecha de Salida:</label>
+          <!-- <label for="departure-date">Fecha de Salida:</label>
                 <input type="date" id="departure-date" name="departure-date" required>
 
                 <label for="return-date">Fecha de Regreso (opcional):</label>
@@ -43,24 +61,34 @@
 
                 <label for="passengers">Número de Pasajeros:</label>
                 <input type="number" id="passengers" class="passengers" name="passengers" min="1" value="1"> -->
+                <div class="button-container">
+                    <div>
+                        <button type="submit">
+                            <span>Buscar Billete</span>
+                        </button>
+                    </div>
+                    <div>
+                        <button type="reset" class="reset">
+                            <span class="reset-button">Repetir Búsqueda</span>
+                        </button>
+                    </div>
+                </div>
+        </form>
+      </section>
 
-                <button type="submit">
-                    <span>Buscar Billete</span>
-                </button>
-            </form>
-        </section>
+      <section>
+        <h2>Resultados de Búsqueda</h2>
+        <div id="search-result">
 
-        <section>
-            <h2>Resultados de Búsqueda</h2>
-            <!-- Aquí mostrarás los resultados de la búsqueda de vuelos -->
-        </section>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p class="footer_text">&copy; 2023 Grupo 4 HACK A BOSS</p>
+      <p class="footer_text">&copy; 2023 Grupo 4 HACK A BOSS</p>
     </footer>
     <script src="/JS/main.js"></script>
-</body>
+  </body>
 </html>
 
 <!--

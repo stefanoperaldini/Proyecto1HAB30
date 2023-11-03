@@ -133,7 +133,8 @@ label {
 button{
     border: 0;
     margin-top: 15px;
-    background: linear-gradient(150deg, blue, aqua, navy);
+    margin-left: 10px;
+    background: linear-gradient(150deg, blue, darkblue, blue);
     border-radius: 8px;
     color: white;
     display: flex;
@@ -147,7 +148,7 @@ button span {
     background-color: rgb(14, 13, 13);
     padding: 16px 24px;
     border-radius: 6px;
-    transition: .3s;
+    transition: .7s;
 
 }
 
@@ -157,6 +158,40 @@ button:hover span {
 
 button:active {
     transform: scale(0.9);
+}
+
+.reset{
+    border: 0;
+    margin-top: 15px;
+    margin-left: 10px;
+    background: linear-gradient(150deg, red, maroon, red);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    font-size: 18px;
+    padding: 4px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.reset-button span {
+    background-color: rgb(14, 13, 13);
+    padding: 16px 24px;
+    border-radius: 6px;
+    transition: .7s;
+
+}
+
+button:hover span {
+    background: none;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.button-container {
+    display: flex;
 }
 
 
@@ -182,6 +217,12 @@ footer {
 @media (max-width: 600px){
     header {
         flex-direction: column;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 

@@ -71,6 +71,8 @@ async function searchFlights(token, origin, destination, departureDate) {
   }
 }
 
+
+
 async function main() {
   // Uso de la función para obtener un token
   const clientId = "vFAgjkG4GNw4o8as9aSdlqhYHWvbFt9s"; // Reemplaza con tu cliente ID de Amadeus
@@ -79,7 +81,7 @@ async function main() {
   let token = await getAmadeusToken(clientId, clientSecret);
   if(token !== null)
   console.log(token)
-   await searchFlights(token, origin, destination, departureDate);
+   await searchFlights(token, origin, destination, departureDate, passengers);
 }
 
 main ();
@@ -88,9 +90,6 @@ main ();
 
 // Obtén el formulario de búsqueda y agrega un controlador de eventos para la búsqueda
 
-
-
-"use strict"
 
 // Variable para pasajero y obtención de fecha de mañana para el buscador de billetes
 const passengers = 1
