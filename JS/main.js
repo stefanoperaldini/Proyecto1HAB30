@@ -14,7 +14,7 @@ async function getAmadeusToken(clientId, clientSecret) {
     });
 
     if (!response.ok) {
-      // Visualizarlo en la pgina HTML
+      // Visualizarlo en la página HTML
       throw new Error("Error al obtener el token de Amadeus");
     }
 
@@ -22,93 +22,112 @@ async function getAmadeusToken(clientId, clientSecret) {
 
     return data.access_token;
   } catch (error) {
-    // Visualizarlo en la pgina HTML
+    // Visualizarlo en la página HTML
     console.error("Error:", error.message);
     return null;
   }
 }
 
-const searchForm = document.getElementById('flight-search-form');
-searchForm.addEventListener('submit', function (e) {
-    e.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+const searchForm = document.getElementById("flight-search-form");
+searchForm.addEventListener("submit", async function (e) {
+  e.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
 
-    // Obtén los valores de entrada del formulario
-    const origin = document.getElementById('origin').value;
-    const destination = document.getElementById('destination').value;
-    
-    console.log(origin)
-    console.log(destination)
+  // Obtén los valores de entrada del formulario
+  const origin = document.getElementById("origin").value;
+  const destination = document.getElementById("destination").value;
 
-   
+  console.log(origin);
+  console.log(destination);
 
+  const outputDiv = document.getElementById("output");
 
-async function searchFlights(token, origin, destination, departureDate) {
-    
+  async function searchFlights(token, origin, destination, departureDate) {
+    // Define la URL de la solicitud de búsqueda de vuelo aquí
+    const url = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${origin}&destinationLocationCode=${destination}&departureDate=${departureDate}&adults=${passengers}&nonStop=false&max=250`;
 
+    try {
+      const response = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        mode: "cors",
+      });
 
- //const url = `https://api.amadeus.com/v2/shopping/flight-offers?origin=${origin}&destination=${destination}&departureDate=${departureDate}`;
- const url = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${origin}&destinationLocationCode=${destination}&departureDate=${departureDate}&adults=${passengers}&nonStop=false&max=250`
+      if (!response.ok) {
+        // Visualizarlo en la página HTML
+        throw new Error("Error al obtener el vuelo");
+      }
 
-  try {
-    const response = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      mode:"cors"
-    });
+      const datosVuelo = await response.json();
+      console.log(datosVuelo);
 
-    if (!response.ok) {
-      // Visualizarlo en la pgina HTML
-      throw new Error("Error al obtener el vuelo");
+      const vueloBarato = datosVuelo.data[0];
+      console.log(vueloBarato);
+
+    } catch (error) {
+      // Visualizar el error en la consola
+      console.error("Error:");
     }
-
-    const datosVuelo = await response.json();
-    // Procesa los resultados de la búsqueda de vuelos aquí
-    console.log(datosVuelo);
-  } catch (error) {
-    // Visualizarlo en la pgina HTML
-    console.error("Error:", error.message);
   }
-}
 
-
-
-async function main() {
   // Uso de la función para obtener un token
   const clientId = "vFAgjkG4GNw4o8as9aSdlqhYHWvbFt9s"; // Reemplaza con tu cliente ID de Amadeus
   const clientSecret = "GNNN7muQQqXqLjRz"; // Reemplaza con tu cliente secret de Amadeus
 
   let token = await getAmadeusToken(clientId, clientSecret);
-  if(token !== null)
-  console.log(token)
-   await searchFlights(token, origin, destination, departureDate, passengers);
-}
+  if (token !== null) console.log(token);
 
-main ();
+  // Variable para pasajeros y obtención de fecha de mañana para el buscador de billetes
+  const passengers = 1;
 
-
-
-// Obtén el formulario de búsqueda y agrega un controlador de eventos para la búsqueda
-
-
-// Variable para pasajero y obtención de fecha de mañana para el buscador de billetes
-const passengers = 1
-
-function tomorrow() {
-
+  function tomorrow() {
     const actualDate = new Date();
-    const day = actualDate.getDate()+1;
-    const month = actualDate.getMonth()+1;
+    const day = actualDate.getDate() + 1;
+    const month = actualDate.getMonth() + 1;
     const year = actualDate.getFullYear();
 
-    const departureDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
+    const departureDate = `${year}-${month < 10 ? "0" : ""}${month}-${
+      day < 10 ? "0" : ""
+    }${day}`;
     return departureDate;
-};
+  }
 
-const departureDate = tomorrow();
+  const departureDate = tomorrow();
 
-console.log(departureDate);
+  console.log(departureDate);
+
+  searchFlights(token, origin, destination, departureDate);
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("flight-search-form");
+  const errorMessage = document.getElementById("error-message");
+
+  form.addEventListener("submit", function (event) {
+    const originInput = document.getElementById("origin");
+    const destinationInput = document.getElementById("destination");
+
+    const originValue = originInput.value.trim(); 
+    const destinationValue = destinationInput.value.trim();
+
+    
+    const uppercaseRegex = /^[A-Z]{3}$/;
+
+    if (!uppercaseRegex.test(originValue) || !uppercaseRegex.test(destinationValue)) {
+      event.preventDefault();
+
+     
+      errorMessage.textContent = "¡¡¡Los campos de origen y destino deben tener exactamente 3 letras mayúsculas!!!";
+    } else {
+      
+      errorMessage.textContent = "";
+    }
+  });
+});
+
+
+
 /*
 // Obtén el formulario de búsqueda y agrega un controlador de eventos para la búsqueda
 const searchForm = document.getElementById('flight-search-form');
