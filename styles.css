@@ -79,7 +79,7 @@ body {
     font-family: 'exo 2', sans-serif;
     margin: 0;
     padding: 0;
-    background: url(/Icono/pistadespegue.jpg);
+    background: url(Icono/pistadespegue.jpg);
     background-position: left top;
     background-repeat: no-repeat;
     background-attachment: fixed;
